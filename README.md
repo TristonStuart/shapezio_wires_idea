@@ -1,4 +1,87 @@
 # Wires Idea For Shapezio
-## By : TDStuart
+By : **TDStuart** <br>
+Other Contributers : `none :(` <br> <br>
+**Note :** For revisions see bottom of page.
 
- 
+## General Idea
+**Here is the base idea :**
+
+**Goal -** Players build big contraptions to make specific shapes, but building all new processing for each new shape is a pain and takes a bunch of space, so players will often build each processing place they may need (cutters, coloring, combiners, etc.). The problem with this is going in and connecting the right belts to take each shape to the right place then connecting it all back together. This is where wires can come in. Wires allow for players to auto-mate the switching of making different shapes without having to manually connect a bunch of belts together. Wires paired with switches and a display of some kind could allow for major automation in the late game, giving rise to mega factories that can be far more complex but also rewarding and add a shift in dynamic for the late game.
+<br><br>
+**Things Needed -** Well yes wires but here is what else we need <br>
+`Switches` <br>
+`Display Output (1 Tile on/off)` <br>
+`Micro-Controller (Connect Wires to Buildings)` <br>
+`And Gate` <br>
+`Or Gate` <br>
+`XOR Gate` <br>
+`Wire Bundles` <br>
+`Latches` <br> <br>
+
+## Wire Bundles
+Instead of connecting wires like belts, wires should be in a wire bundle. The wire bundle will then connect and act like a belt. This makes a lot more sense as I suspect a lot of wires will be needed. This also will make the micro-chip idea a lot better. Basically players should be allowed to earn upgrades for how many wires they can have in a wire bundle. Probably allow 2 and make it so players need to upgrade the amount to be able to use the full benefits of the micro-chips and save space. <br><br>
+
+Wires should be labeled inside the bundle (either with numbers or colors).
+
+## Micro Controller
+Micro-Controller allows wires to interact with buildings. This allows for checking if a building is clogged, disabling a building, enabling a building, etc. Also specific building based things like reading the amount of shapes stored in a storage.
+
+### Belts
+**Inputs :** <br>
+`Block Belt` (true / false) <br>
+`[Check] Shape on Belt` (needs true) <br>
+`[Check] Check Is Blocked` (needs true) <br>
+**Outputs :** <br>
+`Is Blocked` <br>
+`Shape On Belt` (true / false) <br>
+
+### Balancer
+**Inputs :** <br>
+`Block Balancer [1]` (true / false) <br>
+`Block Balancer [2]` (true / false) <br>
+`[Check] Is Blocked [1]` (needs true) <br>
+`[Check] Is Blocked [2]` (needs true) <br>
+`[Check] Shape In Balancer` (needs true) <br>
+**Outputs :** <br>
+`Is Blocked [1]` (true / false) <br>
+`Is Blocked [2]` (true / false) <br>
+`Shape In Balancer` (true / false)
+
+## Merger
+**Inputs :** <br>
+`Block Merger Output` (true / false) <br>
+`Block Merger Input` (true / false) <br>
+`[Check] Is Output Blocked` (needs true) <br>
+`[Check] Is Input Blocked` (needs true) <br>
+`[Check] Shape In Merger` (needs true) <br>
+**Outputs :** <br>
+`Is Output Blocked` (true / false) <br>
+`Is Input Blocked` (true / false) <br>
+`Shape In Merger` (true / false)
+
+## Tunnel
+**Inputs :** <br>
+`Block Tunnel` (true / false) <br>
+`[Check] Is Blocked` (needs true) <br>
+`[Check] Shape In Tunnel` (needs true) <br>
+**Outputs :** <br>
+`Is Blocked` (true / false) <br>
+`Shape In Tunnel` (true / false)
+
+## Extractor
+**Inputs :** <br>
+`Block Extractor` (true / false) <br>
+`[Check] Is Blocked` (needs true) <br>
+**Outputs :** <br>
+`Is Blocked` (true / false) <br>
+
+## Cutter
+**Inputs :** <br>
+`Block Cutter` (true / false) <br>
+`[Check] Is Blocked [1]` (needs true) <br>
+`[Check] Is Blocked [2]` (needs true) <br>
+`[Check] Shape In Cutter` (true / false) <br>
+**Outputs :** <br>
+`Is Blocked [1]` (true / false) <br>
+`Is Blocked [2]` (true / false) <br>
+`Shape In Cutter` (true / false) <br>
