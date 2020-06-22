@@ -3,6 +3,8 @@ By : **TDStuart** <br>
 Other Contributers : `none :(` <br> <br>
 **Note :** For revisions see bottom of page.
 
+**If you wish to add your own idea (seperate from mine) dm me and ill add it to the github with credit. This will allow your idea to more easily be seen by tobspr**
+
 ## General Idea
 **Here is the base idea :**
 
@@ -97,6 +99,9 @@ What I mean when I say 2 types of wires are **instant** wires and **tick** wires
 So if **tick** is more advanced why not use it all the time? Well it is slow. Unlike in the real world calculations take time and if a wiring makes a loop then it will crash the game. So instead of calculating everything we limit the calculations to be every tick. This will make large wiring slower but will prevent crashes. Since not everything will need loops or more advanced wiring **instant** wiring can prevent the player from experiencing this slowness with most things, as most things won't require **tick** wiring.
 
 ### Instant Wiring
+Every wire calculation takes place before anything else, all happening the frame the initial update happens. Wire Calculation updates can only be called by the player or by specific things, but in general no loops, no micro-controller output updates, etc. This helps improve performance although an initial lag spike may occur for larger circuits (Maybe introduce a delay to spread the load? although defeats the "instant" wiring name lmao).
+
+**Side Effects :** <br>
 Only player initiated wiring calculations. <br>
 All wiring calculations completed before calculating something else. <br>
 No pulses. <br>
@@ -105,3 +110,9 @@ No loops. <br>
 
 ### Tick Wiring
 Every wire calculation happens a tick after one another. The first calculation happens when it gets called but the next calculation will be pushed off to the next tick (aka next frame).
+
+### Switching Wire Types
+Users should just be allowed to click on the wire and change its type!
+
+## Analytics
+I think analytics of the wiring performance and operations would be very useful. Not only to keep in check how much game performance is impacted by what kinds of things and try to optimize but also to keep track of everything going on in complex wiring. There can also be settings that delay wiring speed for game performance which would be useful to know if you should use.
