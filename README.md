@@ -3,7 +3,7 @@ By : **TDStuart** <br>
 Other Contributers : `none :(` <br> <br>
 **Note :** For revisions see bottom of page.
 
-**If you wish to add your own idea (seperate from mine) dm me and ill add it to the github with credit. This will allow your idea to more easily be seen by tobspr**
+**If you wish to add your own idea (seperate from mine) dm me and ill add it to the github with credit. This will allow your idea to more easily be seen by tobspr.**
 
 ## General Idea
 **Here is the base idea :**
