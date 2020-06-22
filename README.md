@@ -47,7 +47,7 @@ Micro-Controller allows wires to interact with buildings. This allows for checki
 `Is Blocked [2]` (true / false) <br>
 `Shape In Balancer` (true / false)
 
-## Merger
+### Merger
 **Inputs :** <br>
 `Block Merger Output` (true / false) <br>
 `Block Merger Input` (true / false) <br>
@@ -59,7 +59,7 @@ Micro-Controller allows wires to interact with buildings. This allows for checki
 `Is Input Blocked` (true / false) <br>
 `Shape In Merger` (true / false)
 
-## Tunnel
+### Tunnel
 **Inputs :** <br>
 `Block Tunnel` (true / false) <br>
 `[Check] Is Blocked` (needs true) <br>
@@ -68,14 +68,14 @@ Micro-Controller allows wires to interact with buildings. This allows for checki
 `Is Blocked` (true / false) <br>
 `Shape In Tunnel` (true / false)
 
-## Extractor
+### Extractor
 **Inputs :** <br>
 `Block Extractor` (true / false) <br>
 `[Check] Is Blocked` (needs true) <br>
 **Outputs :** <br>
 `Is Blocked` (true / false) <br>
 
-## Cutter
+### Cutter
 **Inputs :** <br>
 `Block Cutter` (true / false) <br>
 `[Check] Is Blocked [1]` (needs true) <br>
@@ -85,3 +85,23 @@ Micro-Controller allows wires to interact with buildings. This allows for checki
 `Is Blocked [1]` (true / false) <br>
 `Is Blocked [2]` (true / false) <br>
 `Shape In Cutter` (true / false) <br>
+
+(didn't finish all because I got bored lmao)
+
+
+## Wires
+First off I think having 2 kinds of wires can solve multiple problems, although it makes the programing more complex and can confuse players. <br>
+
+What I mean when I say 2 types of wires are **instant** wires and **tick** wires. Instant wires are only calculated when a user inputted change occurs and is calculated all at one time with no pausing. Tick wires are calculated every tick, can carry pulses, and have more flexibility like being able to do loops and advanced wiring. <br>
+
+So if **tick** is more advanced why not use it all the time? Well it is slow. Unlike in the real world calculations take time and if a wiring makes a loop then it will crash the game. So instead of calculating everything we limit the calculations to be every tick. This will make large wiring slower but will prevent crashes. Since not everything will need loops or more advanced wiring **instant** wiring can prevent the player from experiencing this slowness with most things, as most things won't require **tick** wiring.
+
+### Instant Wiring
+Only player initiated wiring calculations. <br>
+All wiring calculations completed before calculating something else. <br>
+No pulses. <br>
+No wire can change itself. <br>
+No loops. <br>
+
+### Tick Wiring
+Every wire calculation happens a tick after one another. The first calculation happens when it gets called but the next calculation will be pushed off to the next tick (aka next frame).
